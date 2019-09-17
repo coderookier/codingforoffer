@@ -7,6 +7,7 @@ package sort;
 public class QuickSort {
     /**
      * 随机选择基准，将数组分为两部分
+     * 时间复杂度
      * @param data
      * @param start
      * @param end

@@ -18,7 +18,7 @@ class MyComparator implements Comparator<int[]> {
         return o1[0] > o2[0] ? 1 : o1[0]==o2[0] ? 0 : -1;
     }
 }
-public class MergeIntervals {
+public class Leetcode56 {
 
     public int[][] merge(int[][] intervals) {
         //无效输入
@@ -52,7 +52,7 @@ public class MergeIntervals {
     public static void main(String[] args) {
         int[][] demo1 = new int[][] {{1,3}, {2,6}, {8,10}, {15,18}};
         int[][] demo2 = new int[][] {{1,4}, {4,5}};
-        MergeIntervals mergeIntervals = new MergeIntervals();
+        Leetcode56 mergeIntervals = new Leetcode56();
         int[][] arr = mergeIntervals.merge(demo1);
         for(int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[0].length; j++) {

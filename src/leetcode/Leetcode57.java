@@ -8,7 +8,7 @@ import java.util.List;
  * @date 2019/9/18 15:15
  * 57.插入区间
  **/
-public class leetcode57 {
+public class Leetcode57 {
     public int[][] insert(int[][] intervals, int[] newInterval) {
         List<int[]> list = new ArrayList<>();
         if (intervals == null || intervals.length == 0) {
@@ -63,7 +63,7 @@ public class leetcode57 {
     }
 
     public static void main(String[] args) {
-        leetcode57 insertInterval = new leetcode57();
+        Leetcode57 insertInterval = new Leetcode57();
         int[][] intervals = {{1,3},{6,9}};
         int[] newInterval = {2,5};
         int[][] result = insertInterval.insert(intervals, newInterval);

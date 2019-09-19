@@ -25,6 +25,7 @@ public class QuickSort {
         for (index = start; index < end; index++) {
             if (data[index] < data[end]) {
                 small++;
+                //将这个小的数放到small所指位置
                 if (small != index) {
                     swap(data, small, index);
                 }

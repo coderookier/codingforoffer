@@ -8,12 +8,13 @@ import java.util.Map;
 /**
  * @author gutongxue
  * @date 2019/9/20 21:06
+ * 电话号码能表示的字母组合
  **/
 public class Leetcode17 {
 
     public List<String> letterCombinations(String digits) {
         List<String> result = new ArrayList<>();
-        if (digits == null) {
+        if (digits == null || digits.length() <= 0) {
             return result;
         }
         Map<Character, String> map = new HashMap<>();

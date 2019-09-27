@@ -20,7 +20,7 @@ public class Question14 {
         if (length == 3) {
             return 2;
         }
-        //存放子问题的解
+        //存放子问题的解,索引小于3时不是子问题解，是用于计算的解
         int[] products = new int[length + 1];
         products[0] = 0;
         products[1] = 1;

@@ -5,6 +5,7 @@ package chap2;
  * @date 2019/9/20 15:00
  *
  * 判断一个矩阵中是否存在一条包含给定字符串的路径
+ * 回溯法
  *
  **/
 public class Question12 {

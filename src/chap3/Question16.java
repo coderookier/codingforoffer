@@ -43,7 +43,7 @@ public class Question16 {
     public static void main(String[] args) {
         Question16 question16 = new Question16();
         System.out.println(question16.power(2, 3));
-        System.out.println(question16.power(3,3));
+        System.out.println(question16.power(-3,3));
         System.out.println(question16.power(0, 0));
     }
 }

@@ -14,6 +14,7 @@ public class Question17 {
         }
         //用数组存储数字各位上的数字
         int[] number = new int[n];
+        //数组number会保存increment方法造成的改变，所以会依次打印1到最大的n位数
         while (!increment(number, n)) {
             printNumber(number, n);
         }
@@ -28,9 +29,11 @@ public class Question17 {
         int nTakeOver = 0;
         for (int i = n - 1; i >= 0; i--) {
             int nSum = number[i] + nTakeOver;
+            //最低位上的值加1
             if (i == n - 1) {
                 nSum++;
             }
+            //判断各位上+1后是否需要进位
             if (nSum >= 10) {
                 if (i == 0) {
                     isOverflow = true;

@@ -2,6 +2,8 @@ package chap4;
 
 import structure.TreeNode;
 
+import java.util.Stack;
+
 /**
  * @author gutongxue
  * @date 2019/10/22 15:38
@@ -9,6 +11,10 @@ import structure.TreeNode;
  * 就是调换左右子树位置
  **/
 public class Question27 {
+
+    /**
+     * 递归实现
+     */
     public void mirrorRecursively(TreeNode pNode) {
         if (pNode == null) {
             return;
@@ -26,6 +32,32 @@ public class Question27 {
         }
         if (pNode.right != null) {
             mirrorRecursively(pNode.right);
+        }
+    }
+
+    /**
+     * 循环实现
+     */
+    public void mirrorIteratively(TreeNode pNode) {
+        if (pNode == null) {
+            return;
+        }
+        //用栈方便对左右子树都存在子树时的处理
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(pNode);
+        while (stack.size() > 0) {
+            TreeNode node = stack.pop();
+            TreeNode tempNode = node.left;
+            node.left = node.right;
+            node.right = tempNode;
+
+            //将左右子树放入栈中
+            if (node.left != null) {
+                stack.push(node.left);
+            }
+            if (node.right != null) {
+                stack.push(node.right);
+            }
         }
     }
 
@@ -48,6 +80,9 @@ public class Question27 {
         question27.printPreOrder(root);
         System.out.println("--------------------------------");
         question27.mirrorRecursively(root);
+        question27.printPreOrder(root);
+        System.out.println("--------------------------------");
+        question27.mirrorIteratively(root);
         question27.printPreOrder(root);
     }
 

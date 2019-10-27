@@ -7,7 +7,7 @@ package chap4;
  **/
 public class Question33 {
     boolean verifySequenceOfBST(int[] sequence, int start, int end) {
-        if (sequence == null || end < start) {
+        if (sequence == null || end < start ) {
             return false;
         }
         //根节点

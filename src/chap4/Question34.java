@@ -40,7 +40,7 @@ public class Question34 {
         helper(root.left, target, path, currentSum);
         //右子节点添加到路径
         helper(root.right, target, path, currentSum);
-        //回退
+        //回退，在返回父节点之前，在路径上删除当前节点
         path.remove(path.size() - 1);
     }
 

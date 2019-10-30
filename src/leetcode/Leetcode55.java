@@ -18,7 +18,7 @@ public class Leetcode55 {
         dp[nums.length - 1] = true;
         for (int i = nums.length - 2; i >= 0; i--) {
             //nums[i] == 0时为false不用改动
-            for (int j = 1; j <= nums[i]; j++) {
+            for (int j = 1; j <= nums[i] && i + j < nums.length; j++) {
                 if (dp[i + j]) {
                     dp[i] = true;
                     break;

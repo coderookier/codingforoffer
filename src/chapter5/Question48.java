@@ -47,5 +47,7 @@ public class Question48 {
         Question48 question48 = new Question48();
         String string = "arabcacfr";
         System.out.println(question48.longestSubstringWithoutDuplication(string));
+        System.out.println(question48.longestSubstringWithoutDuplication("aaaaaaaaaaaaaaaaaaaaaaaaaaa"));
+        System.out.println(question48.longestSubstringWithoutDuplication("qwertyuioplkjhgfdsazxcvbnm"));
     }
 }

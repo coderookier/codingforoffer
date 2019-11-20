@@ -19,7 +19,15 @@ public class Question45 {
         for (int i = 0; i < numbers.length; i++) {
             numberStr[i] = numbers[i] + "";
         }
-        Arrays.sort(numberStr, new MyComparator());
+        //利用匿名内部类
+        Arrays.sort(numberStr, new Comparator<String>(){
+            @Override
+            public int compare(String o1, String o2) {
+                String str1 = o1 + o2;
+                String str2 = o2 + o1;
+                return str1.compareTo(str2);
+            }
+        });
         StringBuilder sb = new StringBuilder();
         for (String s : numberStr) {
             sb.append(s);
@@ -29,16 +37,8 @@ public class Question45 {
 
     public static void main(String[] args) {
         Question45 question45 = new Question45();
-        int[] numbers = {3,32,321};
+        int[] numbers = {3,32,321,111};
         question45.printMinNumber(numbers);
     }
 }
 
-class MyComparator implements Comparator<String> {
-    @Override
-    public int compare(String o1, String o2) {
-        String str1 = o1 + o2;
-        String str2 = o2 + o1;
-        return str1.compareTo(str2);
-    }
-}

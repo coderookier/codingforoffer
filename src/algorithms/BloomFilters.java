@@ -86,5 +86,6 @@ public class BloomFilters {
         System.out.println(bloomFilters.check(1000001 + ""));
         long end = System.currentTimeMillis();
         System.out.println("执行时间: " + (end - start));
+
     }
 }

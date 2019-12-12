@@ -55,9 +55,13 @@ public class Question56 {
     }
 
     public static void main(String[] args) {
-        int[] data = {2,4,3,6,3,2,5,5,4,6,12,14};
+        int[] data = {2,4,3,6,3,2,5,5,4,6};
         Question56 question56 = new Question56();
         int[] res = question56.findNumsAppearOnce(data);
+        if (res == null) {
+            System.out.println("无出现一次的数字");
+            return;
+        }
         for (int resNum : res) {
             System.out.println(resNum);
         }

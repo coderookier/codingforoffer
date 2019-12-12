@@ -33,9 +33,10 @@ public class Question57 {
     public static void main(String[] args) {
         Question57 question57 = new Question57();
         int[] data = {1,2,4,7,11,15};
-        int[] res = question57.findNumbersWithSum(data, 15);
+        int[] res = question57.findNumbersWithSum(data, 20);
         if (res == null) {
             System.out.println("未找到");
+            return;
         }
         for (int num : res) {
             System.out.println(num);

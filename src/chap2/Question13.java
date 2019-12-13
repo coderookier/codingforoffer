@@ -36,10 +36,7 @@ public class Question13 {
      * 判断能否进入该点
      */
     private boolean check(int threshold, int rows, int cols, int row, int col, boolean[] visited) {
-        if (row >= 0 && row < rows && col >= 0 && col < cols && !visited[row * cols + col] && getDigitSum(row) + getDigitSum(col) <= threshold) {
-            return true;
-        }
-        return false;
+        return row >= 0 && row < rows && col >= 0 && col < cols && !visited[row * cols + col] && getDigitSum(row) + getDigitSum(col) <= threshold;
     }
 
     /**

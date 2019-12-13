@@ -44,12 +44,7 @@ public class Question39 {
                 times++;
             }
         }
-        if (times * 2 >= numbers.length) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return times * 2 >= numbers.length;
     }
 
     public static void main(String[] args) {

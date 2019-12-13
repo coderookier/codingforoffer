@@ -35,10 +35,7 @@ public class BloomFilters {
         if (array[second % arraySize] == 0) {
             return false;
         }
-        if (array[third % arraySize] == 0) {
-            return false;
-        }
-        return true;
+        return array[third % arraySize] != 0;
     }
 
     private int hashcode_1(String key) {

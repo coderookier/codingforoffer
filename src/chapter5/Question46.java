@@ -16,7 +16,7 @@ public class Question46 {
 
     private int getCount(String numberInString) {
         int len = numberInString.length();
-        int dp[] = new int[len];
+        int[] dp = new int[len];
         //遍历当前位置时总共有多少种翻译方法
         int count = 0;
         //从右到左遍历，即自底向上，避免重复运算

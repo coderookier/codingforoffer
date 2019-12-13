@@ -34,12 +34,7 @@ public class Question26 {
      * 规定两个小数绝对值相差很小时，则两个小数相等
      */
     boolean equal(double num1, double num2) {
-        if ((num1 - num2 > -0.0000001) && (num1 - num2 < 0.0000001)) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return (num1 - num2 > -0.0000001) && (num1 - num2 < 0.0000001);
     }
 
     public boolean doesTree1HaveTree2(BinaryTreeNode pRoot1, BinaryTreeNode pRoot2) {

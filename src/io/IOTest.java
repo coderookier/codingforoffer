@@ -24,7 +24,7 @@ public class IOTest {
         }
 
         //输入
-        try (Scanner in = new Scanner(new FileInputStream("employee.txt"), "UTF-8")) {
+        try (Scanner in = new Scanner(new FileInputStream("employee.txt"), StandardCharsets.UTF_8)) {
             Employee[] newStaff = readData(in);
             for (Employee e : newStaff) {
                 System.out.println(e);

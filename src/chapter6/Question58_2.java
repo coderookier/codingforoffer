@@ -1,4 +1,4 @@
-package Chapter6;
+package chapter6;
 
 /**
  * @author gutongxue

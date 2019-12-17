@@ -1,4 +1,4 @@
-package Chapter6;
+package chapter6;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

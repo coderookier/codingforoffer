@@ -16,42 +16,44 @@ public class Question5 {
      * 时间复杂度O(N)
      * @param sb
      */
-    public void replaceBlank(StringBuffer sb) {
-        if (sb == null || sb.length() <= 0) {
-            return;
+    public String replaceSpace(StringBuffer str) {
+        if (str == null || str.length() == 0) {
+            return str.toString();
         }
-        int originLen = sb.length();
-        //扫描一次，记录空格数
-        int spaceNum = 0;
-        for (int i = 0; i < originLen; i++) {
-            if (sb.charAt(i) == ' ') {
-                spaceNum++;
+        //统计字符串中的空格数
+        int numOfSpace = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == ' ') {
+                numOfSpace++;
             }
         }
-        //不存在空格，直接返回
-        if (spaceNum == 0) {
-            return;
+        //没有空格直接返回
+        if (numOfSpace == 0) {
+            return str.toString();
         }
-        int resizeLen = originLen + spaceNum * 2;
-        //指向原字符串最后一位的指针
-        int indexOfOrigin = originLen - 1;
-        //指向替换后的字符串最后一位
-        int indexOfNew = resizeLen - 1;
+        StringBuffer sb = new StringBuffer();
+        sb.setLength(str.length() + 2 * numOfSpace);
+        int index1 = str.length() - 1, index2 = sb.length() - 1;
+        //从后往前遍历，并将字符逐个存放到index2对应位置
+        while (index1 >= 0 && index2 >= 0) {
+            //遍历原字符串到空格，则在新字符串指定位置存放%20
+            if (str.charAt(index1) == ' ') {
+                sb.setCharAt(index2--, '0');
+                sb.setCharAt(index2--, '2');
+                sb.setCharAt(index2--, '%');
+                index1--;
+            }
+            //原字符串没有空格位置直接将字符存放到新字符串指定位置
+            while (index1 >= 0 && index2 >= 0 && str.charAt(index1) != ' ') {
+                sb.setCharAt(index2--, str.charAt(index1--));
+            }
+        }
+        return sb.toString();
+    }
 
-        while (indexOfOrigin >= 0 && indexOfOrigin < indexOfNew) {
-
-            //当前indexOfOrigin所指字符是空格
-            //indexOfNew所指位置依次移动插入'0','2','%'
-            if (sb.charAt(indexOfOrigin) == ' ') {
-                sb.setCharAt(indexOfNew--, '0');
-                sb.setCharAt(indexOfNew--, '2');
-                sb.setCharAt(indexOfNew--, '%');
-            }
-            //当前字符不是空格，则将该字符放到indexOfNew所指位置
-            else {
-                sb.setCharAt(indexOfNew--, sb.charAt(indexOfOrigin));
-            }
-            indexOfOrigin--;
-        }
+    public static void main(String[] args) {
+        Question5 question5 = new Question5();
+        StringBuffer sb = new StringBuffer("We Are Happy");
+        System.out.println(question5.replaceSpace(sb));
     }
 }

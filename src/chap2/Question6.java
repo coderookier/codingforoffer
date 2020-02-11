@@ -57,5 +57,6 @@ public class Question6 {
         Question6 question6 = new Question6();
         question6.printListReverse(headNode.next);
         question6.printListReverse2(headNode.next);
+
     }
 }

@@ -37,6 +37,7 @@ public class Question36 {
         if (lastNodeInList != null) {
             lastNodeInList.right = currentNode;
         }
+
         //右子树转为双向链表
         lastNodeInList = currentNode;
         if (currentNode.right != null) {

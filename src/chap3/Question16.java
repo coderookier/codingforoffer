@@ -16,7 +16,7 @@ public class Question16 {
         int absExponent = Math.abs(exponent);
         double result = powerWithUnsignedExponent(base, absExponent);
         if (exponent < 0) {
-            result = 1.0 / result;
+            result = 1.0d / result;
         }
         return result;
     }
@@ -44,6 +44,5 @@ public class Question16 {
         Question16 question16 = new Question16();
         System.out.println(question16.power(2, 3));
         System.out.println(question16.power(-3,3));
-        System.out.println(question16.power(0, 0));
     }
 }
